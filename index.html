@@ -1,95 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>SheAI 🤍</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<title>SheAI – GenZ Chatbot</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+body{
+  height:100vh;
+  background: radial-gradient(circle at top, #1e1b4b, #020617);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      overflow: hidden;
-    }
+/* HERO */
+.hero{
+  text-align:center;
+}
 
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 40px;
-      width: 90%;
-      max-width: 420px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
+.hero h1{
+  font-size:3rem;
+}
 
-    .glass h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+.hero span{
+  color:#a855f7;
+}
 
-    .glass span {
-      color: #ff7edb;
-    }
+.hero p{
+  margin:12px 0 25px;
+  color:#c7c7c7;
+}
 
-    .glass p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      margin-bottom: 25px;
-    }
+.hero button{
+  padding:14px 30px;
+  font-size:16px;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#a855f7,#ec4899);
+  color:white;
+  box-shadow:0 0 25px rgba(168,85,247,.5);
+}
 
-    .tag {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.15);
-      font-size: 0.75rem;
-      margin: 4px;
-    }
+/* CHAT MODAL */
+.chat-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
 
-    .footer {
-      margin-top: 25px;
-      font-size: 0.75rem;
-      opacity: 0.6;
-    }
-  </style>
+.chat-box{
+  width:380px;
+  height:600px;
+  background:#020617;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(168,85,247,.4);
+  display:flex;
+  flex-direction:column;
+}
+
+.chat-header{
+  padding:14px;
+  background:linear-gradient(135deg,#a855f7,#ec4899);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.chat-header span{
+  font-weight:600;
+}
+
+.chat-header button{
+  background:none;
+  border:none;
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+}
+
+iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="glass">
-    <h1>She<span>AI</span> 🤖</h1>
-    <p>Your smart, warm & reliable AI companion ✨  
-      Ask anything. No judgment. Just vibes.</p>
+<div class="hero">
+  <h1>Hey 👋 I’m <span>SheAI</span></h1>
+  <p>Your Gen-Z AI chatbot ✨</p>
+  <button onclick="openChat()">Start Chat 💬</button>
+</div>
 
-    <div>
-      <span class="tag">💬 Chat</span>
-      <span class="tag">🧠 Smart</span>
-      <span class="tag">⚡ Fast</span>
-      <span class="tag">💜 Friendly</span>
+<div class="chat-modal" id="chatModal">
+  <div class="chat-box">
+    <div class="chat-header">
+      <span>SheAI 💜</span>
+      <button onclick="closeChat()">✕</button>
     </div>
 
-    <div class="footer">
-      Built by Chetna • Powered by Botpress
-    </div>
+    <!-- YOUR BOTPRESS BOT -->
+    <iframe
+      src="https://cdn.botpress.cloud/webchat/v3.6/index.html?configUrl=https://files.bpcontent.cloud/2026/02/12/13/20260212135420-YWZ6I33U.json">
+    </iframe>
+
   </div>
+</div>
 
-  <!-- Botpress Webchat -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-  <script src="https://files.bpcontent.cloud/2026/02/12/13/20260212135420-YWZ6I33U.js" defer></script>
+<script>
+function openChat(){
+  document.getElementById("chatModal").style.display="flex";
+}
+
+function closeChat(){
+  document.getElementById("chatModal").style.display="none";
+}
+</script>
 
 </body>
 </html>
