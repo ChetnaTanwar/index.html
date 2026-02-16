@@ -1,16 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SheAI Chatbot</title>
+  <meta charset="UTF-8" />
+  <title>SheAI 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .glass h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .glass span {
+      color: #ff7edb;
+    }
+
+    .glass p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 25px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.15);
+      font-size: 0.75rem;
+      margin: 4px;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Welcome to SheAI 🤖</h2>
-<p>Chat with our AI assistant below.</p>
+  <div class="glass">
+    <h1>She<span>AI</span> 🤖</h1>
+    <p>Your smart, warm & reliable AI companion ✨  
+      Ask anything. No judgment. Just vibes.</p>
 
-<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/02/12/13/20260212135420-YWZ6I33U.js" defer></script>
+    <div>
+      <span class="tag">💬 Chat</span>
+      <span class="tag">🧠 Smart</span>
+      <span class="tag">⚡ Fast</span>
+      <span class="tag">💜 Friendly</span>
+    </div>
+
+    <div class="footer">
+      Built by Chetna • Powered by Botpress
+    </div>
+  </div>
+
+  <!-- Botpress Webchat -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/02/12/13/20260212135420-YWZ6I33U.js" defer></script>
 
 </body>
 </html>
